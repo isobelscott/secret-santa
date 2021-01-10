@@ -131,3 +131,9 @@ dmypy.json
 # env
 santa-env/
 
+# secrets
+secrets.props
+
+# react
+backend/secret_santa/migrations/
+

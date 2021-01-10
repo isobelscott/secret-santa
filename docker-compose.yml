@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  backend:
+    env_file:
+      - secrets.props
+    build: ./backend
+    command: ["bash", "entrypoint.sh"]
+    volumes:
+      - ./backend:/opt/backend
+    ports:
+      - "8000:8000"
+  frontend:
+    build: ./frontend
+    command: ["npm", "start"]
+    volumes:
+      - ./frontend:/opt/frontend
+      - node-modules:/opt/frontend/node_modules
+    ports:
+      - "3000:3000"
+    restart: on-failure
+
+volumes:
+  node-modules:
+
+
