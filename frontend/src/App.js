@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class Persons extends Component {
@@ -11,7 +10,7 @@ class Persons extends Component {
         this.setState({
             isLoading: true
         }, async () => {
-            const url = `http://localhost:8000/api/persons`;
+            const url = `http://localhost:8000/api/persons?format=json`;
             const response = await fetch(url);
             const data = await response.json();
             this.setState({
