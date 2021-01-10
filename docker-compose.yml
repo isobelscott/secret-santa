@@ -3,7 +3,7 @@ version: '3'
 services:
   backend:
     env_file:
-      - secrets.props
+      - dev.env
     build: ./backend
     command: ["bash", "entrypoint.sh"]
     volumes:

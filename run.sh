@@ -2,6 +2,6 @@
 
 # run in a container
 docker-compose \
-    --env-file $DIR/secrets.props \
+    --env-file $DIR/dev.env \
     -force-recreate \
     up
