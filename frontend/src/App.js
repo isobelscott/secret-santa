@@ -14,7 +14,7 @@ class Persons extends Component {
             const response = await fetch(url);
             const data = await response.json();
             this.setState({
-                data: data.results,
+                data: data,
                 isLoading: false
             });
         });
@@ -25,7 +25,19 @@ class Persons extends Component {
     render() {
         return (
             <div>
-                {this.state.data}
+                {this.state.data.map((data, key) => {
+                  return (
+                    <div key={key}>
+                      {data.id +
+                        " , " +
+                        data.first_name +
+                        " ," +
+                        data.email +
+                        ", " +
+                        data.exclusions}
+                    </div>
+                  );
+                })}
             </div>
         );
     }
